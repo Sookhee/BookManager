@@ -17,10 +17,10 @@ namespace BookManager
             lblTotalRent.Text = DataManager.Books.Where((x) => x.isBorrowed).Count().ToString();
             lblTotalOverdue.Text = DataManager.Books.Where((x) => { return x.isBorrowed && x.BorrowedAt.AddDays(7) < DateTime.Now; }).Count().ToString();
 
-            dataGridView1.DataSource = DataManager.Books;
-            dataGridView2.DataSource = DataManager.Users;
-            dataGridView1.CurrentCellChanged += DataGridView1_CurrentCellChanged;
-            dataGridView2.CurrentCellChanged += DataGridView2_CurrentCellChanged;
+            dataGridView2.DataSource = DataManager.Books;
+            dataGridView1.DataSource = DataManager.Users;
+            dataGridView2.CurrentCellChanged += DataGridView1_CurrentCellChanged;
+            dataGridView1.CurrentCellChanged += DataGridView2_CurrentCellChanged;
 
             btnBorrow.Click += Button1_Click;
             btnReturn.Click += Button2_Click;
@@ -30,7 +30,7 @@ namespace BookManager
         {
             try
             {
-                Book book = dataGridView1.CurrentRow.DataBoundItem as Book;
+                Book book = dataGridView2.CurrentRow.DataBoundItem as Book;
                 tbIsbn.Text = book.Isbn;
                 tbBookName.Text = book.Name;
             }
@@ -44,7 +44,7 @@ namespace BookManager
         {
             try
             {
-                User book = dataGridView2.CurrentRow.DataBoundItem as User;
+                User book = dataGridView1.CurrentRow.DataBoundItem as User;
                 tbUserId.Text = book.Id.ToString();
             }
             catch (Exception exception)
@@ -80,8 +80,8 @@ namespace BookManager
                         book.isBorrowed = true;
                         book.BorrowedAt = DateTime.Now;
 
-                        dataGridView1.DataSource = null;
-                        dataGridView1.DataSource = DataManager.Books;
+                        dataGridView2.DataSource = null;
+                        dataGridView2.DataSource = DataManager.Books;
                         DataManager.Save();
 
                         MessageBox.Show("\"" + book.Name + "\"이/가\"" + user.Name + "\"님께 대여되었습니다.");
@@ -113,8 +113,8 @@ namespace BookManager
                         book.isBorrowed = false;
                         book.BorrowedAt = new DateTime();
 
-                        dataGridView1.DataSource = null;
-                        dataGridView1.DataSource = DataManager.Books;
+                        dataGridView2.DataSource = null;
+                        dataGridView2.DataSource = DataManager.Books;
                         DataManager.Save();
 
                         if (book.BorrowedAt.AddDays(7) > DateTime.Now)
