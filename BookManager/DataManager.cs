@@ -52,7 +52,7 @@ namespace BookManager
             }
         }
 
-        private static void Save()
+        public static void Save()
         {
             string booksOutput = "";
             booksOutput += "<books>\n";

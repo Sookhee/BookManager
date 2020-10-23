@@ -28,18 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnInsert = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbPublisher = new System.Windows.Forms.TextBox();
+            this.tbPage = new System.Windows.Forms.TextBox();
+            this.tbBookName = new System.Windows.Forms.TextBox();
+            this.tbIsbn = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Isbn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,85 +51,61 @@
             this.UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isBorrowed = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.BorrowedAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnDelete);
+            this.groupBox1.Controls.Add(this.btnUpdate);
+            this.groupBox1.Controls.Add(this.btnInsert);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.tbPublisher);
+            this.groupBox1.Controls.Add(this.tbPage);
+            this.groupBox1.Controls.Add(this.tbBookName);
+            this.groupBox1.Controls.Add(this.tbIsbn);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(521, 160);
+            this.groupBox1.Size = new System.Drawing.Size(530, 160);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "도서 추가/수정/삭제";
             // 
-            // label1
+            // btnDelete
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Isbn";
+            this.btnDelete.Location = new System.Drawing.Point(439, 24);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 25);
+            this.btnDelete.TabIndex = 10;
+            this.btnDelete.Text = "삭제";
+            this.btnDelete.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // btnUpdate
             // 
-            this.textBox1.Location = new System.Drawing.Point(94, 24);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(157, 25);
-            this.textBox1.TabIndex = 1;
+            this.btnUpdate.Location = new System.Drawing.Point(358, 24);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 25);
+            this.btnUpdate.TabIndex = 9;
+            this.btnUpdate.Text = "수정";
+            this.btnUpdate.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // btnInsert
             // 
-            this.textBox2.Location = new System.Drawing.Point(94, 55);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(157, 25);
-            this.textBox2.TabIndex = 2;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(94, 117);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(157, 25);
-            this.textBox3.TabIndex = 3;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(94, 86);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(157, 25);
-            this.textBox4.TabIndex = 4;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 90);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 15);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "출판사";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 59);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 15);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "도서 이름";
+            this.btnInsert.Location = new System.Drawing.Point(277, 24);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(75, 25);
+            this.btnInsert.TabIndex = 8;
+            this.btnInsert.Text = "추가";
+            this.btnInsert.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -139,32 +116,60 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "페이지";
             // 
-            // button1
+            // label3
             // 
-            this.button1.Location = new System.Drawing.Point(277, 24);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 25);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "추가";
-            this.button1.UseVisualStyleBackColor = true;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(7, 59);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(72, 15);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "도서 이름";
             // 
-            // button2
+            // label2
             // 
-            this.button2.Location = new System.Drawing.Point(277, 55);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 25);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "수정";
-            this.button2.UseVisualStyleBackColor = true;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 90);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 15);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "출판사";
             // 
-            // button3
+            // tbPublisher
             // 
-            this.button3.Location = new System.Drawing.Point(277, 86);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 25);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "삭제";
-            this.button3.UseVisualStyleBackColor = true;
+            this.tbPublisher.Location = new System.Drawing.Point(94, 86);
+            this.tbPublisher.Name = "tbPublisher";
+            this.tbPublisher.Size = new System.Drawing.Size(157, 25);
+            this.tbPublisher.TabIndex = 4;
+            // 
+            // tbPage
+            // 
+            this.tbPage.Location = new System.Drawing.Point(94, 117);
+            this.tbPage.Name = "tbPage";
+            this.tbPage.Size = new System.Drawing.Size(157, 25);
+            this.tbPage.TabIndex = 3;
+            // 
+            // tbBookName
+            // 
+            this.tbBookName.Location = new System.Drawing.Point(94, 55);
+            this.tbBookName.Name = "tbBookName";
+            this.tbBookName.Size = new System.Drawing.Size(157, 25);
+            this.tbBookName.TabIndex = 2;
+            // 
+            // tbIsbn
+            // 
+            this.tbIsbn.Location = new System.Drawing.Point(94, 24);
+            this.tbIsbn.Name = "tbIsbn";
+            this.tbIsbn.Size = new System.Drawing.Size(157, 25);
+            this.tbIsbn.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(34, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Isbn";
             // 
             // groupBox4
             // 
@@ -180,6 +185,7 @@
             // 
             this.dataGridView2.AllowUserToAddRows = false;
             this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Isbn,
@@ -189,7 +195,10 @@
             this.UserId,
             this.UserName,
             this.isBorrowed,
-            this.BorrowedAt});
+            this.BorrowedAt,
+            this.idDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn});
+            this.dataGridView2.DataSource = this.userBindingSource;
             this.dataGridView2.Location = new System.Drawing.Point(7, 25);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
@@ -197,6 +206,7 @@
             this.dataGridView2.RowTemplate.Height = 27;
             this.dataGridView2.Size = new System.Drawing.Size(1169, 174);
             this.dataGridView2.TabIndex = 0;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // Isbn
             // 
@@ -264,6 +274,28 @@
             this.BorrowedAt.ReadOnly = true;
             this.BorrowedAt.Width = 125;
             // 
+            // userBindingSource
+            // 
+            this.userBindingSource.DataSource = typeof(BookManager.User);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nameDataGridViewTextBoxColumn.Width = 125;
+            // 
             // FormBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -277,6 +309,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -284,16 +317,16 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnInsert;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbPublisher;
+        private System.Windows.Forms.TextBox tbPage;
+        private System.Windows.Forms.TextBox tbBookName;
+        private System.Windows.Forms.TextBox tbIsbn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.DataGridView dataGridView2;
@@ -305,5 +338,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn UserName;
         private System.Windows.Forms.DataGridViewCheckBoxColumn isBorrowed;
         private System.Windows.Forms.DataGridViewTextBoxColumn BorrowedAt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource userBindingSource;
     }
 }

@@ -43,9 +43,9 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnReturn = new System.Windows.Forms.Button();
             this.btnBorrow = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbBookName = new System.Windows.Forms.TextBox();
+            this.tbUserId = new System.Windows.Forms.TextBox();
+            this.tbIsbn = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -89,12 +89,14 @@
             this.도서관리ToolStripMenuItem.Name = "도서관리ToolStripMenuItem";
             this.도서관리ToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
             this.도서관리ToolStripMenuItem.Text = "도서관리";
+            this.도서관리ToolStripMenuItem.Click += new System.EventHandler(this.도서관리ToolStripMenuItem_Click);
             // 
             // 사용자관리ToolStripMenuItem
             // 
             this.사용자관리ToolStripMenuItem.Name = "사용자관리ToolStripMenuItem";
             this.사용자관리ToolStripMenuItem.Size = new System.Drawing.Size(103, 24);
             this.사용자관리ToolStripMenuItem.Text = "사용자 관리";
+            this.사용자관리ToolStripMenuItem.Click += new System.EventHandler(this.사용자관리ToolStripMenuItem_Click);
             // 
             // groupBox1
             // 
@@ -190,9 +192,9 @@
             // 
             this.groupBox2.Controls.Add(this.btnReturn);
             this.groupBox2.Controls.Add(this.btnBorrow);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.tbBookName);
+            this.groupBox2.Controls.Add(this.tbUserId);
+            this.groupBox2.Controls.Add(this.tbIsbn);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label11);
@@ -222,26 +224,26 @@
             this.btnBorrow.Text = "대출";
             this.btnBorrow.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // tbBookName
             // 
-            this.textBox3.Location = new System.Drawing.Point(93, 52);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 25);
-            this.textBox3.TabIndex = 10;
+            this.tbBookName.Location = new System.Drawing.Point(93, 52);
+            this.tbBookName.Name = "tbBookName";
+            this.tbBookName.Size = new System.Drawing.Size(100, 25);
+            this.tbBookName.TabIndex = 10;
             // 
-            // textBox2
+            // tbUserId
             // 
-            this.textBox2.Location = new System.Drawing.Point(93, 83);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 25);
-            this.textBox2.TabIndex = 9;
+            this.tbUserId.Location = new System.Drawing.Point(93, 83);
+            this.tbUserId.Name = "tbUserId";
+            this.tbUserId.Size = new System.Drawing.Size(100, 25);
+            this.tbUserId.TabIndex = 9;
             // 
-            // textBox1
+            // tbIsbn
             // 
-            this.textBox1.Location = new System.Drawing.Point(93, 21);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 25);
-            this.textBox1.TabIndex = 8;
+            this.tbIsbn.Location = new System.Drawing.Point(93, 21);
+            this.tbIsbn.Name = "tbIsbn";
+            this.tbIsbn.Size = new System.Drawing.Size(100, 25);
+            this.tbIsbn.TabIndex = 8;
             // 
             // label9
             // 
@@ -344,6 +346,7 @@
             this.dataGridView2.RowTemplate.Height = 27;
             this.dataGridView2.Size = new System.Drawing.Size(1169, 174);
             this.dataGridView2.TabIndex = 0;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // Isbn
             // 
@@ -422,7 +425,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            //this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -458,9 +461,9 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbBookName;
+        private System.Windows.Forms.TextBox tbUserId;
+        private System.Windows.Forms.TextBox tbIsbn;
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.Button btnBorrow;
         private System.Windows.Forms.GroupBox groupBox3;

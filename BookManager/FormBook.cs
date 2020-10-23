@@ -16,5 +16,10 @@ namespace BookManager
         {
             InitializeComponent();
         }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
